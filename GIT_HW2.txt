@@ -1,0 +1,94 @@
+1. На локальному репозиторії зробити гілки для:
+
+Postman - git branch Postman
+Jmeter - git branch Jmeter
+CheckLists - git branch Checklists
+Bug Reports - git branch Bugreports
+SQL - git branch SQL
+Charles - git branch Charles
+Mobile testing - git branch Mobile_testing
+2. Запушити всі шілки на зовніщній репозиторій:
+
+git push --all
+3. В гілці Bugreports зробити текстовий документ зі структурою баг репорту:
+
+git checkout Bugreports
+vim bugreports.txt
+- 1.Короткий опис (Summary)
+- Короткий опис проблеми, який явно вказує на причину та тип помилкової ситуації.__
+- 2.Проєкт (Project)      Назва проєкта який тестуємо 
+- 3.Компонент додатку (Component)      Назва частини чи функції  продукту який тестуємо
+- 4.Номер версії (Version)        Версія на якій була знайдена помилка
+- 5.Серйозність (Severity)
+- 6.Найбільш поширена п'ятирівнева система градації серйозності дефекту:
+
+S1 Блокуючий (Blocker)
+S2 Критичний (Critical)
+S3 Значний (Major)
+S4 Незначний (Minor)
+S5 Трівіальний
+
+- 7.Пріоритет (Priority)
+Пріоритет дефекту:
+
+P1 Високий (High)
+P2 Середній (Medium)
+P3 Низький (Low)
+
+- 8.Статус (Status)       Статус бага. Залежить від процедури що використовується  та життєвого циклу бага (bug workflow and life cycle)
+
+- 9.Автор (Author)        Створювач баг репорту
+
+- 10.Призначений на (Assigned To)    Ім'я співробітника, призначеного  на вирішення проблеми
+
+- 11.Оточення
+ОС / Сервіс Пак и т.д. / Браузера + версія / ...        Информація про оточення, на якому було знайдено баг: операційна система, сервіс пак, для WEB тестування - ім'я та версія браузеру і т.д.
+...
+
+- 12.Опис
+Кроки відтворення (Steps to Reproduce)       Кроки, за якими можна легко відвторити ситуацію, що призвела  до помилки.
+Фактичний Результат (Result)  Результат, отриманий після проходження кроків до  відтворення  
+Очікуваний результат (Expected Result)   Очікуваний правильний результат
+Доповнення
+Прикріплений файл (Attachment) Файл с логами, скріншот чи любий другий документ, який може  допомогти прояснити причину помилки  чи вказати на спосіб вирішення проблеми
+Esc + :wq
+4. Запушити структуру багрепорту на зовнішній репозиторій
+
+__git add bugreports.txt __
+git commit -m "Create bugrreport.txt"
+__git push __
+5. Вмержити гілку Bag Reports в Main:
+
+git checkout main
+git merge Bugreports
+6. Запушити main на зовніщній репозиторій:
+
+git push
+7. В гілці Checklists накидати структуру чек ліста:
+
+git checkout Checklists
+cat > checklist.txt
+ID
+Summary
+Section
+Enviroment
+Expected Result
+Status
+Bug report link
+Ctrl+c
+8. Запушити структуру на зовнішній репозиторій
+
+git add checklist.txt
+git commit -m "Create checklist.txt"
+git push -u origin CheckLists
+9. На зовнішній репозиторії зробити Pull Request гілки Checklists в main:
+
+на зовнішньому репозиторії клікнути на кнопку "Compare&Pull request"
+в полі для комментаря оставити комментарій "Branch is ready to be merged"
+клікнути на кнопку "Create pull request"
+клікнути на кнопку "Merge pull request"
+клікнути на кнопку "Confirm merge"
+10. Синхронізувати зовніншню та Локальну гілку Main:
+
+git checkout main
+git fetch
