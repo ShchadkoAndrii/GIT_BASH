@@ -1,0 +1,51 @@
+Первая часть первого  ДЗ  ))
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я pwd
+2) Создать папку mkdir folder4
+3) Зайти в папку сd folder4
+4) Создать 3 папки mkdir folder1,folder2,folder3 
+5) Зайти в любоую папку cd folder3
+6) Создать 5 файлов (3 txt, 2 json) touch file1.txt,touch file2.txt,touch file3.txt,touch file1.json, touch file2.json
+7) Создать 3 папки mkdir -p {folder1,folder2,folder3} 
+8. Вывести список содержимого папки LS -LA, LS -F, LS
+9) + Открыть любой txt файл start file1.txt
+10) + написать туда что-нибудь, любой текст.
+11) + сохранить и выйти.
+12) Выйти из папки на уровень выше cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. mv file1.json file2.json ../folder1
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. cp file1.txt file2.txt .. folder1
+15) Найти файл по имени find -name "ShchadkoAndrii.txt"
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. tail file1.txt
+17) вывести несколько первых строк из текстового файла head -2 file1.txt
+18) вывести несколько последних строк из текстового файла tail -2 file1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. less file1.txt
+20) вывести дату и время date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+1) Отправить http запрос на сервер.
+curl http://162.55.220.72:5005/terminal-hw-request
+```
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+#!/bin/bash
+cd /c/Users/Acer/Git_UA/folder4
+echo "The current directory is:"
+pwd
+echo "Creating a new directory"
+mkdir my_script
+echo "Open new directory"
+cd my_script
+echo "Creating new directories"
+mkdir test_1 test_2 test_3
+echo "Open new directory"
+cd test_1
+echo "Creating new files"
+touch file_1.txt file_2.txt file_3.txt j_file1.json j_file2.json
+echo "Show all files in this directory"
